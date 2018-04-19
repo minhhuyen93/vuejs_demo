@@ -1,0 +1,24 @@
+{
+  "name": "vuejs_demo",
+  "version": "1.0.0",
+  "description": "Vuejs for Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node build/webpack.dev.conf.js",
+    "build": "node build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhhuyen93/vuejs_demo.git"
+  },
+  "author": "Huyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhhuyen93/vuejs_demo/issues"
+  },
+  "homepage": "https://github.com/minhhuyen93/vuejs_demo#readme",
+  "dependencies": {
+    "bower": "^1.8.4"
+  }
+}
