@@ -1,38 +1,31 @@
 <template>
-  <div class="row col-lg-12">
-      <div class="column">
-        <span class="">NEW
-        </span>
-        <div class="container-fluid">
-          <div v-for="machine of machines" v-bind:key="machine.id">
-            <div class="container-fluid machine-contents">
-              <draggable v-model="machine.jobs">
-                <transition-group name="list-complete">
-                  <div v-for="job in machine.jobs" v-bind:key="job.jobNumber" class="list-complete-item">
-                    <div>{{ job.jobNumber }}</div>
-                  </div>
-                </transition-group>
-              </draggable>
-            </div>
-        </div>
+  <div class="fluid container">
+    <div class="form-group form-group-lg panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Drag and Drop Vuejs</h3>
       </div>
     </div>
-    <div class="column">
-      <span class="">PENDING
-        </span>
-        <div class="container-fluid">
-          <div v-for="machine of machines" v-bind:key="machine.id">
-            <div class="container-fluid machine-contents">
-              <draggable v-model="machine.jobs">
-                <transition-group name="list-complete">
-                  <div v-for="job in machine.jobs" v-bind:key="job.jobNumber" class="list-complete-item">
-                    <div>{{ job.jobNumber }}</div>
-                  </div>
-                </transition-group>
-              </draggable>
-            </div>
-        </div>
-      </div>
+    <div class="col-md-3">
+        <draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=true">
+          <transition-group type="transition" :name="'flip-list'">
+            <li class="list-group-item" v-for="element in list" :key="element.order">
+              <i aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li>
+          </transition-group>
+      </draggable>
+    </div>
+     <div  class="col-md-3">
+      <draggable element="span" v-model="list2" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=true">
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list2" :key="element.order">
+              <i aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li>
+          </transition-group>
+      </draggable>
     </div>
   </div>
 </template>
@@ -40,62 +33,83 @@
 <script>
 import draggable from 'vuedraggable'
 
+const message = [
+  'vue.draggable',
+  'draggable',
+  'component',
+  'for',
+  'vue.js 2.0',
+  'based',
+  'on',
+  'Sortablejs'
+]
 export default {
   name: 'LearnEnergys',
   components: {
     draggable
   },
-  data: function () {
+  data () {
     return {
-      machines: [
-        {
-          name: 'H1',
-          id: 1,
-          jobs: [
-            {
-              jobNumber: '4037-12'
-            },
-            {
-              jobNumber: '14038-13'
-            },
-            {
-              jobNumber: '14048-15'
-            }
-          ]
-        }
-      ]
+      list: message.map((name, index) => {
+        return { name, order: index + 1, fixed: false }
+      }),
+      list2: [],
+      editable: false,
+      isDragging: false,
+      delayedDragging: false
+    }
+  },
+  methods: {
+    onMove ({ relatedContext, draggedContext }) {
+      const relatedElement = relatedContext.element
+      const draggedElement = draggedContext.element
+      return (
+        (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+      )
+    }
+  },
+  computed: {
+    dragOptions () {
+      return {
+        animation: 0,
+        group: 'description',
+        disabled: false,
+        ghostClass: 'ghost'
+      }
+    }
+  },
+  watch: {
+    isDragging (newValue) {
+      if (newValue) {
+        this.delayedDragging = true
+        return
+      }
+      this.$nextTick(() => {
+        this.delayedDragging = false
+      })
     }
   }
 }
 </script>
+
 <style>
-.machine-contents {
-  width: 200px;
-  text-align: center;
-  display: inline-block;
+.flip-list-move {
+  transition: transform 0.5s;
 }
-.list-complete-item {
-    padding: 4px;
-    margin-top: 4px;
-    border: solid 1px;
-    transition: all 1s;
-  }
-  .list-complete-enter, .list-complete-leave-active {
-    opacity: 0;
-  }
-
-.column {
-    float: left;
-    width: 16.66%;
-    border-radius: 5px;
-    margin: 0 5px;
-    border: 1px solid;
-    height: 300px;
+.no-move {
+  transition: transform 0s;
 }
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
+.list-group {
+  min-height: 20px;
+}
+.list-group-item {
+  cursor: move;
+}
+.list-group-item i {
+  cursor: pointer;
 }
 </style>

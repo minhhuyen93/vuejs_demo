@@ -1,33 +1,18 @@
-<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-
 <template>
   <div id="app" class="col-md-12 col-lg-12">
     <ul class="nav nav-stacked main-navigation-bar">
-          <li class="navigation-item"><router-link to="/learnEnergys">Go to LearnEnergys</router-link></li>
-          <li class="navigation-item"><router-link to="/">Go to Home Pages</router-link></li>
+        <li class="navigation-item"><router-link to="/learnEnergys">Go to LearnEnergys</router-link></li>
     </ul>
     <div class="main-content">
-    <router-view/>
+        <router-view></router-view>
     </div>
   </div>
-
 </template>
 
 <script>
-import LearnEnergys from "@/components/LearnEnergys"
-
-import HelloWorld from "@/components/HelloWorld"
-
-import BootstrapVue from 'bootstrap-vue'
-
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
-    LearnEnergys,
-    BootstrapVue
-  }
-};
+  name: 'App'
+}
 </script>
 
 <style lang="scss" scoped>

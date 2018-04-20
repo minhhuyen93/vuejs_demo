@@ -5,11 +5,22 @@ import App from './App'
 
 import router from './router'
 
+import LearnEnergys from './components/LearnEnergys'
+
+import HelloWorld from './components/HelloWorld'
+
+import BootstrapVue from 'bootstrap-vue'
+
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
+  components: {
+    App,
+    HelloWorld,
+    LearnEnergys,
+    BootstrapVue
+  },
   template: '<App/>'
 })
