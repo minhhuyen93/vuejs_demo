@@ -1,0 +1,123 @@
+<template>
+  <div class="fluid container">
+    <div class="form-group form-group-lg panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Drag and Drop Vuejs</h3>
+      </div>
+    </div>
+    <div class="col-md-3">
+        <draggable class="list-group" element="ul" v-model="list" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=true">
+          <transition-group type="transition" :name="'flip-list'">
+            <li class="list-group-item" v-for="element in list" :key="element.order">
+              <i aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li>
+          </transition-group>
+      </draggable>
+    </div>
+     <div  class="col-md-3">
+      <draggable element="span" v-model="list2" :options="dragOptions" :move="onMove" @start="isDragging=true" @end="isDragging=true">
+          <transition-group name="no" class="list-group" tag="ul">
+            <li class="list-group-item" v-for="element in list2" :key="element.order">
+              <i aria-hidden="true"></i>
+              {{element.name}}
+              <span class="badge">{{element.order}}</span>
+            </li>
+          </transition-group>
+      </draggable>
+    </div>
+    <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
+    <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
+  </div>
+</template>
+
+<script>
+import draggable from 'vuedraggable'
+
+import Childlearnenergy from './Childlearnenergy'
+
+const message = [
+  'vue.draggable',
+  'draggable',
+  'component',
+  'for',
+  'vue.js 2.0',
+  'based',
+  'on',
+  'Sortablejs'
+]
+export default {
+  name: 'LearnEnergys',
+  components: {
+    draggable,
+    Childlearnenergy
+  },
+  data () {
+    return {
+      list: message.map((name, index) => {
+        return { name, order: index + 1, fixed: false }
+      }),
+      list2: [],
+      editable: false,
+      isDragging: false,
+      delayedDragging: false
+    }
+  },
+  methods: {
+    onMove ({ relatedContext, draggedContext }) {
+      const relatedElement = relatedContext.element
+      const draggedElement = draggedContext.element
+      return (
+        (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+      )
+    },
+    alerMessage (option) {
+      alert('Emit event here!! ' + option)
+    }
+  },
+  computed: {
+    dragOptions () {
+      return {
+        animation: 0,
+        group: 'description',
+        disabled: false,
+        ghostClass: 'ghost'
+      }
+    }
+  },
+  watch: {
+    isDragging (newValue) {
+      if (newValue) {
+        this.delayedDragging = true
+        return
+      }
+      this.$nextTick(() => {
+        this.delayedDragging = false
+      })
+    }
+  }
+}
+</script>
+
+<style>
+.flip-list-move {
+  transition: transform 0.5s;
+}
+.no-move {
+  transition: transform 0s;
+}
+.ghost {
+  opacity: 0.5;
+  background: #c8ebfb;
+}
+.list-group {
+  min-height: 20px;
+}
+.list-group-item {
+  cursor: move;
+}
+.list-group-item i {
+  cursor: pointer;
+}
+</style>
