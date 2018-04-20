@@ -28,7 +28,6 @@
       </draggable>
     </div>
     <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
-    <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
   </div>
 </template>
 
