@@ -2,6 +2,7 @@
   <div id="app" class="col-md-12 col-lg-12">
     <ul class="nav nav-stacked main-navigation-bar">
         <li class="navigation-item"><router-link to="/learnEnergys">Go to LearnEnergys</router-link></li>
+        <li class="navigation-item"><router-link to="/">Go to HomePage</router-link></li>
     </ul>
     <div class="main-content">
         <router-view></router-view>

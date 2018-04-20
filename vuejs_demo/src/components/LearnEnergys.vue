@@ -27,11 +27,15 @@
           </transition-group>
       </draggable>
     </div>
+    <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
+    <childlearnenergy @optionselected="alerMessage"></childlearnenergy>
   </div>
 </template>
 
 <script>
 import draggable from 'vuedraggable'
+
+import Childlearnenergy from './Childlearnenergy'
 
 const message = [
   'vue.draggable',
@@ -46,7 +50,8 @@ const message = [
 export default {
   name: 'LearnEnergys',
   components: {
-    draggable
+    draggable,
+    Childlearnenergy
   },
   data () {
     return {
@@ -66,6 +71,9 @@ export default {
       return (
         (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
       )
+    },
+    alerMessage (option) {
+      alert('Emit event here!! ' + option)
     }
   },
   computed: {

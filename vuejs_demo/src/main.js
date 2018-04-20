@@ -9,6 +9,8 @@ import LearnEnergys from './components/LearnEnergys'
 
 import HelloWorld from './components/HelloWorld'
 
+import Childlearnenergy from './components/Childlearnenergy'
+
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.config.productionTip = false
@@ -20,7 +22,8 @@ new Vue({
     App,
     HelloWorld,
     LearnEnergys,
-    BootstrapVue
+    BootstrapVue,
+    Childlearnenergy
   },
   template: '<App/>'
 })
