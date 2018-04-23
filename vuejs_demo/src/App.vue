@@ -1,18 +1,34 @@
 <template>
   <div id="app" class="col-md-12 col-lg-12">
-    <ul class="nav nav-stacked main-navigation-bar">
+    <!-- <ul class="nav nav-stacked main-navigation-bar">
         <li class="navigation-item"><router-link to="/learnEnergys">Go to LearnEnergys</router-link></li>
         <li class="navigation-item"><router-link to="/">Go to HomePage</router-link></li>
     </ul>
     <div class="main-content">
         <router-view></router-view>
+    </div> -->
+    <div class="row">
+        <div class="col-md-6">
+            <hello-world></hello-world>
+        </div>
+        <div class="col-md-6">
+            <done></done>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld'
+
+import Done from './components/Done'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    HelloWorld,
+    Done
+  }
 }
 </script>
 

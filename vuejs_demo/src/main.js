@@ -13,17 +13,23 @@ import Childlearnenergy from './components/Childlearnenergy'
 
 import BootstrapVue from 'bootstrap-vue'
 
+import store from './store/index'
+
+import Done from './components/Done'
+
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App,
     HelloWorld,
     LearnEnergys,
     BootstrapVue,
-    Childlearnenergy
+    Childlearnenergy,
+    Done
   },
   template: '<App/>'
 })
