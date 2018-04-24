@@ -1,34 +1,34 @@
 <template>
   <div id="app" class="col-md-12 col-lg-12">
-    <div class="left-container">
-      <div class="main-process">
-        <div class="process-item">
+    <div class="left-container col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
+      <div class="main-process col-md-9 col-lg-9">
+        <div class="process-item col-md-3 col-lg-3">
             <h3 class="process-item__title">New</h3>
             <i class="setting-icon"/>
             <span class="process-item__number"> (3)</span>
         </div>
-        <div class="process-item">
+        <div class="process-item col-md-3 col-lg-3">
             <h3 class="process-item__title">Pending</h3>
             <i class="setting-icon"/>
             <span class="process-item__number"> (5)</span>
         </div>
-        <div class="process-item">
+        <div class="process-item col-md-3 col-lg-3">
             <h3 class="process-item__title">Scheduled</h3>
             <i class="setting-icon"/>
             <span class="process-item__number"> (4)</span>
         </div>
-        <div class="process-item">
+        <div class="process-item col-md-3 col-lg-3">
             <h3 class="process-item__title">In Field</h3>
             <i class="setting-icon"/>
             <span class="process-item__number"> (2)</span>
         </div>
-        <div class="process-item">
+        <div class="process-item col-md-3 col-lg-3">
             <h3 class="process-item__title">Compleled</h3>
             <i class="setting-icon"/>
             <span class="process-item__number"> (99) </span>
         </div>
       </div>
-      <div class="content-process">
+      <div class="content-process col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
   <!--start block for new status -->
         <div class="content-process-container">
           <div class="content-item">
@@ -158,5 +158,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.main-process {
+  display: inline-block;
 }
 </style>
