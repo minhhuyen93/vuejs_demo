@@ -1,152 +1,17 @@
 <template>
   <div id="app" class="col-md-12 col-lg-12">
-    <div class="left-container col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
-      <div class="main-process col-md-9 col-lg-9">
-        <div class="process-item col-md-3 col-lg-3">
-            <h3 class="process-item__title">New</h3>
-            <i class="setting-icon"/>
-            <span class="process-item__number"> (3)</span>
-        </div>
-        <div class="process-item col-md-3 col-lg-3">
-            <h3 class="process-item__title">Pending</h3>
-            <i class="setting-icon"/>
-            <span class="process-item__number"> (5)</span>
-        </div>
-        <div class="process-item col-md-3 col-lg-3">
-            <h3 class="process-item__title">Scheduled</h3>
-            <i class="setting-icon"/>
-            <span class="process-item__number"> (4)</span>
-        </div>
-        <div class="process-item col-md-3 col-lg-3">
-            <h3 class="process-item__title">In Field</h3>
-            <i class="setting-icon"/>
-            <span class="process-item__number"> (2)</span>
-        </div>
-        <div class="process-item col-md-3 col-lg-3">
-            <h3 class="process-item__title">Compleled</h3>
-            <i class="setting-icon"/>
-            <span class="process-item__number"> (99) </span>
-        </div>
-      </div>
-      <div class="content-process col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
-  <!--start block for new status -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for new status -->
-  <!--start block for new pending -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for PEDNING status -->
-  <!--start block for new SCHEDULED -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for SCHEDULED status -->
-  <!--start block for new IN FIELD -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for IN FIELD status -->
-  <!--start block for new COMPLETED -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for COMPLETED status -->
-      </div>
-    </div>
+    <kanban></kanban>
   </div>
 </template>
 
 <script>
+import Kanban from './components/Kanban'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Kanban
+  }
 }
 </script>
 

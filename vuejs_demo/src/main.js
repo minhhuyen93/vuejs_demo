@@ -13,6 +13,8 @@ import Childlearnenergy from './components/Childlearnenergy'
 
 import BootstrapVue from 'bootstrap-vue'
 
+import Kanban from './components/Kanban'
+
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
@@ -23,7 +25,8 @@ new Vue({
     HelloWorld,
     LearnEnergys,
     BootstrapVue,
-    Childlearnenergy
+    Childlearnenergy,
+    Kanban
   },
   template: '<App/>'
 })
