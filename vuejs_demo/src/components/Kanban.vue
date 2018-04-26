@@ -164,98 +164,100 @@
 export default {
   name: 'Kanban',
   data: function () {
-    return [
-      {
-        'id': 1,
-        'name': 'NEW',
-        'servicesRequests': [
-          {
-            'title': 'SOI234 - Install',
-            'detail': 'Comms4 - 3214',
-            'content': 'Powercord',
-            'due': 'Due: 5/4/2018'
-          },
-          {
-            'title': 'SOI235 - Install',
-            'detail': 'Comms4 - 3215',
-            'content': 'Powercord',
-            'due': 'Due: 6/4/2018'
-          }
-        ]
-      },
-      {
-        'id': 2,
-        'name': 'PENDING',
-        'servicesRequests': [
-          {
-            'title': 'SOI244 - Install',
-            'detail': 'Comms5 - 3314',
-            'content': 'Powercord',
-            'due': 'Due: 5/4/2018'
-          },
-          {
-            'title': 'SOI245 - Install',
-            'detail': 'Comms4 - 3315',
-            'content': 'Powercord',
-            'due': 'Due: 6/4/2018'
-          }
-        ]
-      },
-      {
-        'id': 3,
-        'name': 'SCHEDULED',
-        'servicesRequests': [
-          {
-            'title': 'SOI244 - Install',
-            'detail': 'Comms5 - 3314',
-            'content': 'Powercord',
-            'due': 'Due: 5/4/2018'
-          },
-          {
-            'title': 'SOI245 - Install',
-            'detail': 'Comms4 - 3315',
-            'content': 'Powercord',
-            'due': 'Due: 6/4/2018'
-          }
-        ]
-      },
-      {
-        'id': 4,
-        'name': 'IN FIELD',
-        'servicesRequests': [
-          {
-            'title': 'SOI244 - Install',
-            'detail': 'Comms5 - 3314',
-            'content': 'Powercord',
-            'due': 'Due: 5/4/2018'
-          },
-          {
-            'title': 'SOI245 - Install',
-            'detail': 'Comms4 - 3315',
-            'content': 'Powercord',
-            'due': 'Due: 6/4/2018'
-          }
-        ]
-      },
-      {
-        'id': 5,
-        'name': 'COMPLETED',
-        'servicesRequests': [
-          {
-            'title': 'SOI244 - Install',
-            'detail': 'Comms5 - 3314',
-            'content': 'Powercord',
-            'due': 'Due: 5/4/2018'
-          },
-          {
-            'title': 'SOI245 - Install',
-            'detail': 'Comms4 - 3315',
-            'content': 'Powercord',
-            'due': 'Due: 6/4/2018'
-          }
-        ]
-      }
-    ]
+    return {
+      pipelineprocess: [
+        {
+          'id': 1,
+          'name': 'NEW',
+          'servicesRequests': [
+            {
+              'title': 'SOI234 - Install',
+              'detail': 'Comms4 - 3214',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI235 - Install',
+              'detail': 'Comms4 - 3215',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            }
+          ]
+        },
+        {
+          'id': 2,
+          'name': 'PENDING',
+          'servicesRequests': [
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            }
+          ]
+        },
+        {
+          'id': 3,
+          'name': 'SCHEDULED',
+          'servicesRequests': [
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            }
+          ]
+        },
+        {
+          'id': 4,
+          'name': 'IN FIELD',
+          'servicesRequests': [
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            }
+          ]
+        },
+        {
+          'id': 5,
+          'name': 'COMPLETED',
+          'servicesRequests': [
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            }
+          ]
+        }
+      ]
+    }
   }
 }
 </script>
