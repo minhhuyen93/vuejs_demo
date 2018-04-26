@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="col-md-12 col-lg-12">
+  <div id="app">
     <kanban></kanban>
   </div>
 </template>

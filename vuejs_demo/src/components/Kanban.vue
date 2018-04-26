@@ -1,161 +1,25 @@
 <template>
 <div class="left-container col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
       <div class="main-process col-md-12 col-lg-12">
-        <div class="process-item">
-            <h3 class="process-item__title">New</h3>
+        <div class="process-item" v-for="item in pipelineprocess" :key="item.id">
+            <h3 class="process-item__title">{{item.name}}</h3>
             <span class="glyphicon glyphicon-cog icon-setting"></span>
-            <span class="process-item__number"> (3)</span>
+            <span class="process-item__number">{{item.servicesRequests.lenght}}</span>
         </div>
-        <!-- <div class="process-item">
-            <h3 class="process-item__title">Pending</h3>
-            <span class="glyphicon glyphicon-cog icon-setting"></span>
-            <span class="process-item__number"> (5)</span>
-        </div>
-        <div class="process-item">
-            <h3 class="process-item__title">Scheduled</h3>
-            <span class="glyphicon glyphicon-cog icon-setting"></span>
-            <span class="process-item__number"> (4)</span>
-        </div>
-        <div class="process-item">
-            <h3 class="process-item__title">In Field</h3>
-            <span class="glyphicon glyphicon-cog icon-setting"></span>
-            <span class="process-item__number"> (2)</span>
-        </div>
-        <div class="process-item">
-            <h3 class="process-item__title">Compleled</h3>
-            <span class="glyphicon glyphicon-cog icon-setting"></span>
-            <span class="process-item__number"> (99) </span>
-        </div> -->
       </div>
       <div class="content-process col-md-12 col-lg-12">
   <!--start block for new status -->
-        <div class="content-process-container">
-          <div class="content-item">
+        <div class="content-process-container" v-for="item in pipelineprocess" :key="item.id">
+          <div class="content-item" v-for="data in item.servicesRequests" :key="data.title">
             <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
+            <span class="content-item__title">{{data.title}}</span>
             <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
+              <p>{{data.detail}}</p>
+              <p>{{data.content}}</p>
+              <p class="content-item__detail--due">{{data.due}}</p>
             </div>
           </div>
         </div>
-  <!-- end block for new status -->
-  <!--start block for new pending -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for PEDNING status -->
-  <!--start block for new SCHEDULED -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for SCHEDULED status -->
-  <!--start block for new IN FIELD -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for IN FIELD status -->
-  <!--start block for new COMPLETED -->
-        <div class="content-process-container">
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI234 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3213</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 3/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-          <div class="content-item">
-            <i class="state-icon"/>
-            <span class="content-item__title"> SOI235 - Install</span>
-            <div class="content-item__detail">
-              <p>Comms4 - 3214</p>
-              <p>Powercord</p>
-              <p class="content-item__detail--due">Due: 5/4/2018</p>
-            </div>
-          </div>
-        </div>
-  <!-- end block for COMPLETED status -->
       </div>
     </div>
 </template>
@@ -253,6 +117,30 @@ export default {
               'detail': 'Comms4 - 3315',
               'content': 'Powercord',
               'due': 'Due: 6/4/2018'
+            },
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
+            },
+            {
+              'title': 'SOI244 - Install',
+              'detail': 'Comms5 - 3314',
+              'content': 'Powercord',
+              'due': 'Due: 5/4/2018'
+            },
+            {
+              'title': 'SOI245 - Install',
+              'detail': 'Comms4 - 3315',
+              'content': 'Powercord',
+              'due': 'Due: 6/4/2018'
             }
           ]
         }
@@ -279,7 +167,6 @@ export default {
 //start block content-process
 .content-process {
   padding: 0;
-  border: 1px solid;
   border-radius: 3px;
   height: 500px;
   font-size: 15px;
