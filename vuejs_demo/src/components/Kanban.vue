@@ -1,5 +1,6 @@
 <template>
 <div class="left-container col-md-offset-3 col-lg-offset-3 col-md-9 col-lg-9">
+  <button type="submit" v-on:click="getProcess">Submit to another page</button>
       <div class="main-process col-md-12 col-lg-12">
         <div class="process-item" v-for="item in pipelineprocess" :key="item.id">
             <h3 class="process-item__title">{{item.name}}</h3>
@@ -25,6 +26,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Kanban',
   data: function () {
@@ -145,6 +148,13 @@ export default {
           ]
         }
       ]
+    }
+  },
+  methods: {
+    getProcess () {
+      axios.get('https://localhost:44360/changerequest/queryfields').then(function (response) {
+        console.log(response.data)
+      })
     }
   }
 }
